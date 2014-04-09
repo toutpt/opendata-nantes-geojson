@@ -1,0 +1,16 @@
+{
+	"source": "../downloads/opendata/environnement-eoliens.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.geo.name",
+		"labels": {
+			"NOM_PARC": "Nom du parc",
+			"ETAT_AVANCEMENT": "État d'avancement",
+			"NBR_EOLIENNE": "Nombre d'éoliennes",
+			"PUISSANCE": "Puissance totale en mégawatts"
+		}
+	},
+	"icon": "eolienne",
+	"output": "static/geojson/environnement-eoliens.geo.json"
+}

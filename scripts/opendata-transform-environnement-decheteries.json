@@ -1,0 +1,19 @@
+{
+	"source": "../downloads/opendata/environnement-decheteries.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.geo.name",
+		"labels": {
+			"NOM_COMPLET": "Nom",
+			"WEB": "Site Internet",
+			"TELEPHONE": "Téléphone",
+			"ADRESSE": "Adresse",
+			"CODE_POSTAL": "Code postal",
+			"COMMUNE": "Commune",
+			"PRESENTATION": "Présentation"
+		}
+	},
+	"icon": "decheterie",
+	"output": "static/geojson/environnement-decheteries.geo.json"
+}

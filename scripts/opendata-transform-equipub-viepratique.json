@@ -1,0 +1,22 @@
+{
+	"source": "../downloads/opendata/equipub-vie-pratique.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.geo.name",
+		"labels": {
+			"source": "http://data.nantes.fr/donnees/detail/localisation-des-equipements-publics-relevant-du-theme-sports-loisirs-de-nantes-metropole/?visualization=3",
+			"NOM_COMPLET": "Nom",
+			"LIBCATEGORIE": "Catégorie",
+			"LIBTYPE": "Type",
+			"STATUT": "Statut",
+			"ADRESSE": "Adresse",
+			"CODE_POSTAL": "Code postal",
+			"COMMUNE": "Commune",
+			"TELEPHONE": "Téléphone",
+			"WEB": "Site Internet"
+		}
+	},
+	"icon": "equipub-vie-pratique",
+	"output": "static/geojson/equipub-vie-pratique.geo.json"
+}

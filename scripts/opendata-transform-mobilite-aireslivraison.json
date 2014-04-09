@@ -1,0 +1,17 @@
+{
+	"source": "../downloads/opendata/mobilite-aireslivraison.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.ADRESSE",
+		"labels": {
+			"source": "http://data.nantes.fr/donnees/detail/localisation-des-equipements-publics-relevant-du-theme-sports-loisirs-de-nantes-metropole/?visualization=3",
+			"DISQUE_LIVRAISON": "Disque de livraison",
+			"LONGUEUR": "Longueur",
+			"LARGEUR": "Largeur",
+			"LQUARTIER": "Quartier"
+		}
+	},
+	"icon": "livraison",
+	"output": "static/geojson/mobilite-aireslivraison.geo.json"
+}

@@ -1,0 +1,22 @@
+{
+	"source": "../downloads/opendata/equipub-actionsociale.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.geo.name",
+		"labels": {
+			"NOM_COMPLET": "Nom",
+			"LIBCATEGORIE": "Catégorie",
+			"LIBTYPE": "Type",
+			"STATUT": "Statut (privé/public)",
+			"COMMUNE": "Commune",
+			"WEB": "Site Internet",
+			"CODE_POSTAL": "Code postal",
+			"TELEPHONE": "Téléphone",
+			"ADRESSE": "Adresse",
+			"COMMUNE": "Commune"
+		}
+	},
+	"icon": "equipub-actionsociale",
+	"output": "static/geojson/equipub-actionsociale.geo.json"
+}

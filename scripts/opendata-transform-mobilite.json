@@ -1,0 +1,32 @@
+{
+	"source": "../downloads/opendata/mobilite.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.geo.name",
+		"blacklist": ["geo", "_l", "THEME", "_IDOBJ", "CATEGORIE", "LIBTHEME", "LIBCATEGORIE"],
+		"labels": {
+			"CODE_POSTAL": "Code postal",
+			"WEB": "Site Internet",
+			"TELEPHONE": "Téléphone",
+			"ADRESSE": "Adresse",
+			"COMMUNE": "Commune"
+		}
+	},
+	"icons": {
+		"switch": "properties.LIBTYPE",
+		"case" : {
+			"bicloo": "bicloo",
+			"marguerite": "marguerite",
+			"route":  "lilas",
+			"fluvial": "port",
+			"souterrain": "parking",
+			"rail": "train",
+			"libre": "parcrelais",
+			"enclos": "parcrelais",
+			"default": "parking"
+		},
+		"default": "parking"
+	},
+	"output": "static/geojson/mobilite.geo.json"
+}

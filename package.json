@@ -1,0 +1,18 @@
+{
+  "name": "opendata-nantes-geojson",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app/api.js",
+    "debug": "DEBUG=express:* node --debug app/api.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js --debug app/api.js",
+    "test": "gulp test",
+    "postinstall": "scripts/postinstall.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "optimist": "~0.6.1",
+    "csv": "~0.3.7",
+    "adm-zip": "~0.4.4"
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"source": "../downloads/opendata/equipub-publics.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.geo.name",
+		"labels": {
+			"source": "http://data.nantes.fr/donnees/detail/implantations-des-lieux-publics-en-pays-de-la-loire/?visualization=3",
+			"NOM": "Nom",
+			"CATEGORIE": "Catégorie",
+			"SS_CATEG": "Sous-catégorie",
+			"CAPACITE": "Capacité",
+			"CONDITIONS": "Conditions",
+			"OUVERTURE": "Horaires d'ouverture",
+			"DESCRIPTIF": "Descriptif",
+			"ADRESSE": "Adresse",
+			"CP": "Code postal",
+			"COMMUNE": "Ville",
+			"TEL": "Téléphone",
+			"URL": "Site Internet",
+			"ACCES": "Accessibilité aux PMR",
+			"COMMENTAIRE": "Commentaire"
+		}
+	},
+	"icon": "equipub-publics",
+	"output": "static/geojson/equipub-publics.geo.json"
+}

@@ -1,0 +1,17 @@
+{
+	"source": "../downloads/opendata/equipub-jardins-familiaux.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"popupContent": {
+		"title": "properties.geo.name",
+		"labels": {
+			"NOM": "Nom",
+			"ASSOCIATION": "Gestionnaire",
+			"NBRE_PARCELLES": "Nombre de parcelles",
+			"SURFACE_TOTALE": "Surface totale en m²",
+			"ADRESSE": "Adresse"
+		}
+	},
+	"icon": "jardin",
+	"output": "static/geojson/equipub-jardins-familiaux.geo.json"
+}
