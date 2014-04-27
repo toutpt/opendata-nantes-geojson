@@ -77,17 +77,42 @@ var addPopupContent = function(featureCollection){
     for (var i = 0; i < featureCollection.features.length; i++) {
         var entry = featureCollection.features[i];
         var popupContent = '';
-        var newProperties = {};
         if (settings.popupContent.title){
             var title = _traverse(entry, settings.popupContent.title);
-            newProperties['title'] = title;
+            popupContent += '<h4>%</h4>'.replace('%', title);
         }
         for(var key in settings.popupContent.labels){
             var property = entry.properties[key];
             var label = settings.popupContent.labels[key];
-            newProperties[label] = property;
+            var isHTML = false;
+            if (typeof property === 'string'){
+                property = property.trim();
+            }
+            if (property === null || property === undefined || property === ''){
+                continue;
+            }
+            if (key === 'COMMENTAIRE'){
+                debugger;
+            }
+            if (typeof property === 'string'){
+                if (property.indexOf('www') === 0){
+                    property = 'http://' + property;
+                }
+                if (property.indexOf('http') === 0){
+                    property = '<a href="%s">Site Internet</a>'
+                        .replace('%s',property);
+                    isHTML = true;
+                }
+            }
+            if (isHTML){
+                popupContent += '<li>' + property + '</li>';
+            }else{
+                popupContent += '<li>%k : %v</li>'
+                    .replace('%k', label)
+                    .replace('%v', property);
+            }
         }
-        entry.properties = newProperties;
+        entry.properties.popupContent = popupContent;
         newValues.push(entry);
     }
     featureCollection.features = newValues;
