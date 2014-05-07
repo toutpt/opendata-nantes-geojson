@@ -72,86 +72,6 @@ var initGeoJSON = function(values){
 var removeEntries = function(featureCollection){
     return featureCollection;
 };
-var addPopupContent = function(featureCollection){
-    var newValues = [];
-    for (var i = 0; i < featureCollection.features.length; i++) {
-        var entry = featureCollection.features[i];
-        var popupContent = '';
-        if (settings.popupContent.title){
-            var title = _traverse(entry, settings.popupContent.title);
-            popupContent += '<h4>%</h4>'.replace('%', title);
-        }
-        for(var key in settings.popupContent.labels){
-            var property = entry.properties[key];
-            var label = settings.popupContent.labels[key];
-            var isHTML = false;
-            if (typeof property === 'string'){
-                property = property.trim();
-            }
-            if (property === null || property === undefined || property === ''){
-                continue;
-            }
-            if (key === 'COMMENTAIRE'){
-                debugger;
-            }
-            if (typeof property === 'string'){
-                if (property.indexOf('www') === 0){
-                    property = 'http://' + property;
-                }
-                if (property.indexOf('http') === 0){
-                    property = '<a href="%s">Site Internet</a>'
-                        .replace('%s',property);
-                    isHTML = true;
-                }
-            }
-            if (isHTML){
-                popupContent += '<li>' + property + '</li>';
-            }else{
-                popupContent += '<li>%k : %v</li>'
-                    .replace('%k', label)
-                    .replace('%v', property);
-            }
-        }
-        entry.properties.popupContent = popupContent;
-        newValues.push(entry);
-    }
-    featureCollection.features = newValues;
-    return featureCollection;
-};
-var addIcons = function(featureCollection){
-    var newValues = [];
-    var settingsIcons = settings.icons;
-    var settingsIcon = settings.icon;
-    var addIcon = function(entry){
-        if (settingsIcons){
-            var switchKey = _traverse(entry, settingsIcons['switch']);
-            if (!switchKey){
-                entry.properties.icon = settingsIcons.default;
-            }else{
-                switchKey = switchKey.toLowerCase();
-                for(var key in settingsIcons['case']){
-                    //key === 'bicloo'                    
-                    if (key === switchKey){
-                        entry.properties.icon = settingsIcons['case'][key];
-                    }
-                }
-                if (!entry.properties.icon){
-                    entry.properties.icon = settingsIcons['case'].default;
-                }
-            }
-        }else if (settingsIcon){
-            entry.properties.icon = settingsIcon;
-        }
-    };
-    for (var i = 0; i < featureCollection.features.length; i++) {
-        var entry = featureCollection.features[i];
-        addIcon(entry);
-        newValues.push(entry);
-
-    }
-    featureCollection.properties = newValues;
-    return featureCollection;
-};
 
 
 var save = function(featureCollection){
@@ -190,6 +110,4 @@ if (settings.data){
 
 var transformed = initGeoJSON(source);
 transformed = removeEntries(transformed);
-transformed = addPopupContent(transformed);
-transformed = addIcons(transformed);
 save(transformed);
