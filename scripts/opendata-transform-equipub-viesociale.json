@@ -17,6 +17,17 @@
 			"WEB": "Site Internet"
 		}
 	},
-	"icon": "equipub-viesociale",
+	"icons": {
+		"switch": "properties.LIBCATEGORIE",
+		"case" : {
+			"Petite enfance": "petiteenfance",
+			"Jeunesse": "jeunesse",
+			"Personne agée": "personneagee",
+			"Etudiant": "etudiant",
+			"Vie associative": "vieassociative"
+		},
+		"default": "default"
+	},
+
 	"output": "static/geojson/equipub-viesociale.geo.json"
 }
