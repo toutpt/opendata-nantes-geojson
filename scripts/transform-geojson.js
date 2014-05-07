@@ -72,12 +72,53 @@ var initGeoJSON = function(values){
 var removeEntries = function(featureCollection){
     return featureCollection;
 };
+var addIcons = function(featureCollection){
+    var newValues = [];
+    var settingsIcons = settings.icons;
+    var settingsIcon = settings.icon;
+    var addIcon = function(entry){
+        if (settingsIcons){
+            var switchKey = _traverse(entry, settingsIcons['switch']);
+            if (!switchKey){
+                //console.log('icon : default');
+                entry.properties.icon = settingsIcons.default;
+            }else{
+                //console.log('icon : find on switch');
+                switchKey = switchKey.toLowerCase();
+                for(var key in settingsIcons['case']){
+                    //key === 'bicloo'                    
+                    if (key === switchKey){
+                    //console.log('icon : found ' + key);
+                        entry.properties.icon = settingsIcons['case'][key];
+                    }
+                }
+                if (!entry.properties.icon){
+                    //console.log('default');
+                    entry.properties.icon = settingsIcons['case'].default;
+                }
+            }
+        }else if (settingsIcon){
+            //console.log('set to the only icon');
+            entry.properties.icon = settingsIcon;
+        }
+    };
+    for (var i = 0; i < featureCollection.features.length; i++) {
+        var entry = featureCollection.features[i];
+        addIcon(entry);
+        //console.log(entry.properties.icon);
+        newValues.push(entry);
+
+    }
+    featureCollection.properties = newValues;
+    return featureCollection;
+};
 
 
 var save = function(featureCollection){
+    //console.log('save ' + featureCollection);
     var _handleError = function(err){
         if(err) {
-            console.log(err);
+            //console.log(err);
         }
     };
     var _save = function(filename, data){
@@ -85,6 +126,7 @@ var save = function(featureCollection){
         fs.writeFile(filename, JSON.stringify(data), _handleError);
     };
     _save(settings.output, featureCollection);
+    //console.log('icons ' + settings.icons);
     var settingsIcons = settings.icons;
     if (!settingsIcons){
         return;
@@ -110,4 +152,5 @@ if (settings.data){
 
 var transformed = initGeoJSON(source);
 transformed = removeEntries(transformed);
+transformed = addIcons(transformed);
 save(transformed);

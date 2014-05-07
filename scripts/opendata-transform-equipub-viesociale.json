@@ -20,11 +20,11 @@
 	"icons": {
 		"switch": "properties.LIBCATEGORIE",
 		"case" : {
-			"Petite enfance": "petiteenfance",
-			"Jeunesse": "jeunesse",
-			"Personne agée": "personneagee",
-			"Etudiant": "etudiant",
-			"Vie associative": "vieassociative"
+			"petite enfance": "petiteenfance",
+			"jeunesse": "jeunesse",
+			"personne agée": "personneagee",
+			"etudiant": "etudiant",
+			"vie associative": "vieassociative"
 		},
 		"default": "default"
 	},
