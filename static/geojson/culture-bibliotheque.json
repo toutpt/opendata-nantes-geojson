@@ -10,11 +10,11 @@
             "addr:city": "capitalize(currentFeature.properties.COMMUNE)",
             "addr:postcode": "currentFeature.properties.CODE_POSTAL",
             "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
-            "source": "'Musique et Danse en Loire-Atlantique, data.nantes.fr'"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",
         	"feature.properties.tags.boundary !== undefined",
+            "feature.properties.tags.type === 'boundary'",
         	"feature.properties.tags.amenity !== undefined && feature.properties.tags.amenity !== 'library'"
         ]
 	}
