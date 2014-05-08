@@ -6,7 +6,7 @@
         "changesetID": "",
         "osmtags": {
             "name": "currentFeature.properties.geo.name",
-            "amenity": "library",
+            "amenity": "'library'",
             "addr:city": "capitalize(currentFeature.properties.COMMUNE)",
             "addr:postcode": "currentFeature.properties.CODE_POSTAL",
             "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
