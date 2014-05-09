@@ -12,8 +12,10 @@
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",
         	"feature.properties.tags.boundary !== undefined",
-            "feature.properties.tags.type === 'boundary'",
-        	"feature.properties.tags.amenity !== undefined && feature.properties.tags.amenity !== 'library'"
+            "feature.properties.tags.type === 'boundary'"
         ]
 	}
 }
+if amenity is defined and is not equal to library
+
+amen
