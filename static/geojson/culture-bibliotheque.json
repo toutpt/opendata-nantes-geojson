@@ -2,14 +2,12 @@
 	"settings": {
         "featureName": "properties.geo.name",
         "featureID": "properties._IDOBJ",
-        "username": "",
-        "changesetID": "",
         "osmtags": {
             "name": "currentFeature.properties.geo.name",
             "amenity": "'library'",
             "addr:city": "capitalize(currentFeature.properties.COMMUNE)",
             "addr:postcode": "currentFeature.properties.CODE_POSTAL",
-            "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
+            "phone": "i18nPhone(currentFeature.properties.TELEPHONE)"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",
