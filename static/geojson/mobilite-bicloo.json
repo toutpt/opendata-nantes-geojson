@@ -1,0 +1,19 @@
+{
+	"settings": {
+        "featureName": "properties.geo.name",
+        "featureID": "properties._IDOBJ",
+        "osmtags": {
+            "name": "currentFeature.properties.geo.name",
+            "amenity": "'bicycle_rental'",
+            "ref": "getFeatureID(currentFeature)",
+            "network": "Bicloo",
+            "source": "Nantes Métropole",
+        },
+        "osmfilter": [
+        	"feature.properties.tags.landuse !== undefined",
+        	"feature.properties.tags.boundary !== undefined",
+            "feature.properties.tags.type === 'boundary'"
+        ],
+        "preferAdding": true
+	}
+}
