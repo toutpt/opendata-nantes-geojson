@@ -7,12 +7,15 @@
             "amenity": "'library'",
             "addr:city": "capitalize(currentFeature.properties.COMMUNE)",
             "addr:postcode": "currentFeature.properties.CODE_POSTAL",
-            "phone": "i18nPhone(currentFeature.properties.TELEPHONE)"
+            "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
+            "source:name": "Nantes Métropole, Musique et Danse en Loire-Atlantique",
+            "source:ref": "getFeatureID(currentFeature)"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",
         	"feature.properties.tags.boundary !== undefined",
             "feature.properties.tags.type === 'boundary'"
-        ]
+        ],
+        "preferAdding": false
 	}
 }
