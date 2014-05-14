@@ -5,9 +5,9 @@
         "osmtags": {
             "name": "currentFeature.properties.geo.name",
             "amenity": "'bicycle_rental'",
-            "ref": "getFeatureID(currentFeature)",
-            "network": "Bicloo",
-            "source": "Nantes Métropole",
+            "network": "'Bicloo'",
+            "source:name": "'Nantes Métropole'",
+            "source:ref": "getFeatureID(currentFeature)"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",
