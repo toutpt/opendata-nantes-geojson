@@ -1,0 +1,20 @@
+{
+	"settings": {
+        "featureName": "properties.geo.name",
+        "featureID": "properties._IDOBJ",
+        "osmtags": {
+            "name": "currentFeature.properties.geo.name",
+            "amenity":"'place_of_worship'",
+            "religion":"'buddhist'",
+            "phone":"i18nPhone(currentFeature.properties.TELEPHONE)",
+            "source": "'data.nantes.fr: Nantes Métropole'",
+            "source:ref": "'currentFeature.properties._IDOBJ'"
+        },
+        "osmfilter": [
+        	"feature.properties.tags.landuse !== undefined",
+        	"feature.properties.tags.boundary !== undefined",
+            "feature.properties.tags.type === 'boundary'",
+            "feature.properties.place === 'island'"
+        ]
+	}
+}

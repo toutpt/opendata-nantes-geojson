@@ -1,0 +1,17 @@
+{
+	"settings": {
+        "featureName": "properties.geo.name",
+        "featureID": "properties.CODE",
+        "osmtags": {
+            "power":"'generator'",
+            "generator:source":"'wind'",
+            "generator:output:electricity": "'*'"
+        },
+        "osmfilter": [
+        	"feature.properties.tags.landuse !== undefined",
+        	"feature.properties.tags.boundary !== undefined",
+            "feature.properties.tags.type === 'boundary'",
+            "feature.properties.place === 'island'"
+        ]
+	}
+}

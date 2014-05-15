@@ -11,9 +11,10 @@
 			"stade": "stade",
 			"circuit de plein air": "randos",
 			"gymnase": "gymnase",
-			"default": "default"
-		},
-		"default": "default"
+			"espace sportif de proximité": "espace",
+			"autre équipement": "autre",
+			"centre sportif": "centre"
+		}
 	},
 	"output": "static/geojson/equipub-sportsloisirs.geo.json"
 }

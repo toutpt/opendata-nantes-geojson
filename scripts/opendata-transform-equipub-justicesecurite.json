@@ -9,10 +9,8 @@
 			"gendarmerie": "gendarmerie",
 			"pompiers": "pompiers",
 			"justice": "justice",
-			"police": "police",
-			"default": "default"
-		},
-		"default": "default"
+			"police": "police"
+		}
 	},
 	"output": "static/geojson/equipub-justice-securite.geo.json"
 }

@@ -2,5 +2,17 @@
 	"source": "../downloads/opendata/equipub-culte.json",
 	"data": "data",
 	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"splitOn": {
+		"switch": ["properties.LIBCATEGORIE"],
+		"case" : {
+			"catholique": "catholique",
+			"protestant": "protestant",
+			"musulman": "musulman",
+			"orthodoxe": "orthodoxe",
+			"juif": "juif",
+			"bouddhiste": "bouddhiste"
+		},
+		"default": "default"
+	},
 	"output": "static/geojson/equipub-culte.geo.json"
 }
