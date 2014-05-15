@@ -2,18 +2,5 @@
 	"source": "../downloads/opendata/equipub-culte.json",
 	"data": "data",
 	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
-	"popupContent": {
-		"title": "properties.geo.name",
-		"labels": {
-			"NOM_COMPLET": "Nom",
-			"LIBCATEGORIE": "Catégorie",
-			"ADRESSE": "Adresse",
-			"CODE_POSTAL": "Code postal",
-			"COMMUNE": "Commune",
-			"WEB": "Site Internet",
-			"TELEPHONE": "Téléphone"
-		}
-	},
-	"icon": "culte",
 	"output": "static/geojson/equipub-culte.geo.json"
 }

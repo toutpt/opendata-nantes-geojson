@@ -6,7 +6,7 @@
             "name": "currentFeature.properties.geo.name",
             "amenity": "'bicycle_rental'",
             "network": "'Bicloo'",
-            "source:name": "'Nantes Métropole'",
+            "source": "'Nantes Métropole'",
             "source:ref": "getFeatureID(currentFeature)"
         },
         "osmfilter": [
@@ -14,6 +14,6 @@
         	"feature.properties.tags.boundary !== undefined",
             "feature.properties.tags.type === 'boundary'"
         ],
-        "preferAdding": true
+        "preferAdding": false
 	}
 }

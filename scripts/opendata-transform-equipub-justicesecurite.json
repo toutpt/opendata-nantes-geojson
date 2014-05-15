@@ -2,22 +2,7 @@
 	"source": "../downloads/opendata/equipub-justice-securite.json",
 	"data": "data",
 	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
-	"popupContent": {
-		"title": "properties.geo.name",
-		"labels": {
-			"NOM_COMPLET": "Nom",
-			"LIBCATEGORIE": "Catégorie",
-			"LIBTYPE": "Type",
-			"ASSOCIATION": "Gestionnaire",
-			"STATUT": "Statut",
-			"ADRESSE": "Adresse",
-			"CODE_POSTAL": "Code postal",
-			"COMMUNE": "Commune",
-			"TELEPHONE": "Téléphone",
-			"WEB": "Site Internet"
-		}
-	},
-	"icons": {
+	"splitOn": {
 		"switch": "properties.LIBCATEGORIE",
 		"case" : {
 			"armée": "armee",

@@ -2,27 +2,5 @@
 	"source": "../downloads/opendata/equipub-parcs-jardins.json",
 	"data": "data",
 	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
-	"popupContent": {
-		"title": "properties.geo.name",
-		"labels": {
-			"Libelle": "Nom",
-			"adresse_postale": "Adresse",
-			"Acces_Tan": "Accès TAN",
-			"Jeux": "Avec jeux pour enfants",
-			"Mobilier_pique_nique": "Équipement pique nique",
-			"Pataugeoire": "Pataugeoire",
-			"Point_d_eau": "Points d'eau",
-			"Sanitaires": "Sanitaires",
-			"Abris": "Abris",
-			"Acces_handicap_y_compris_sanitai": "Site accessible aux handicapés",
-			"Collection_vegetale": "Collections végétales",
-			"Gardien": "Présence d'un gardien",
-			"Chien_interdit_en_laisse": "Chien interdit (même en laisse)",
-			"Jardin_clos": "Jardin clos",
-			"Surface_hors_batiments": "Surface (hors bâtiments) en m²",
-			"Commentaire": "Commentaire"
-		}
-	},
-	"icon": "equipub-parcs-jardins",
 	"output": "static/geojson/equipub-parcs-jardins.geo.json"
 }

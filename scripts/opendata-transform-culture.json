@@ -2,17 +2,7 @@
 	"source": "../downloads/opendata/culture.json",
 	"data": "data",
 	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
-	"popupContent": {
-		"title": "properties.geo.name",
-		"labels": {
-			"CODE_POSTAL": "Code postal",
-			"WEB": "Site Internet",
-			"TELEPHONE": "Téléphone",
-			"ADRESSE": "Adresse",
-			"COMMUNE": "Commune"
-		}
-	},
-	"icons": {
+	"splitOn": {
 		"switch": ["properties.LIBTYPE","properties.LIBCATEGORIE"],
 		"case" : {
 			"château": "chateau",
