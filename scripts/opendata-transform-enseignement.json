@@ -2,5 +2,19 @@
 	"source": "../downloads/opendata/enseignement.json",
 	"data": "data",
 	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"splitOn": {
+		"switch": ["properties.LIBCATEGORIE"],
+		"case" : {
+			"maternelle": "maternelle",
+			"elémentaire": "elementaire",
+			"primaire": "primaire",
+			"collège": "college",
+			"lycée": "lycee",
+			"supérieur": "sup",
+			"centre de formation": "formation",
+			"centre de recherche": "recherche"
+		},
+		"default": "default"
+	},
 	"output": "static/geojson/enseignement.geo.json"
 }

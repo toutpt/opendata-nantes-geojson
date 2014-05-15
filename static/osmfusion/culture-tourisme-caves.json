@@ -15,7 +15,6 @@
         	"feature.properties.tags.landuse !== undefined",
         	"feature.properties.tags.boundary !== undefined",
             "feature.properties.tags.type === 'boundary'"
-        ],
-        "preferAdding": false
+        ]
 	}
 }
