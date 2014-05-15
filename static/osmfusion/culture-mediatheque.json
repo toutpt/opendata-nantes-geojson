@@ -1,0 +1,20 @@
+{
+	"settings": {
+        "featureName": "properties.geo.name",
+        "featureID": "properties._IDOBJ",
+        "osmtags": {
+            "name": "currentFeature.properties.geo.name",
+            "amenity": "'library'",
+            "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
+            "website": "currentFeature.properties.WEB",
+            "source:name": "'data.nantes.fr: Nantes Métropole",
+            "source:ref": "getFeatureID(currentFeature)"
+        },
+        "osmfilter": [
+        	"feature.properties.tags.landuse !== undefined",
+        	"feature.properties.tags.boundary !== undefined",
+            "feature.properties.tags.type === 'boundary'"
+        ],
+        "preferAdding": false
+	}
+}

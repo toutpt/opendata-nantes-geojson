@@ -68,10 +68,7 @@ var initGeoJSON = function(values){
     }
     return featureCollection;
 };
-var removeEntries = function(featureCollection){
-    return featureCollection;
-};
-var addIcons = function(featureCollection){
+var addSplitOn = function(featureCollection){
     var newValues = [];
     var splitOn = settings.splitOn;
     var addIcon = function(entry){
@@ -79,7 +76,7 @@ var addIcons = function(featureCollection){
             var switchKey = _traverse(entry, splitOn['switch']);
             if (!switchKey){
                 //console.log('icon : default');
-                entry.properties.icon = splitOn.default;
+                entry.properties.splitOn = splitOn.default;
             }else{
                 //console.log('icon : find on switch');
                 switchKey = switchKey.toLowerCase();
@@ -87,12 +84,12 @@ var addIcons = function(featureCollection){
                     //key === 'bicloo'                    
                     if (key === switchKey){
                     //console.log('icon : found ' + key);
-                        entry.properties.icon = splitOn['case'][key];
+                        entry.properties.splitOn = splitOn['case'][key];
                     }
                 }
-                if (!entry.properties.icon){
+                if (!entry.properties.splitOn){
                     //console.log('default');
-                    entry.properties.icon = splitOn['case'].default;
+                    entry.properties.splitOn = splitOn['case'].default;
                 }
             }
         }
@@ -119,24 +116,23 @@ var save = function(featureCollection){
         fs.writeFile(filename, JSON.stringify(data), _handleError);
     };
     var splitOn = settings.splitOn;
-    if (!splitOn){
-        return;
-    }
-    for(var key in splitOn['case']){
-        var icon = splitOn['case'][key];
-        var newFeatureCollection = _newFeatureCollection();
-        newFeatureCollection.features = [];
-        for (var i = 0; i < featureCollection.features.length; i++) {
-            var feature = featureCollection.features[i];
-            if (feature.properties.icon === icon){
-                delete feature.properties.icon;
-                newFeatureCollection.features.push(feature);
+    if (splitOn){
+        for(var key in splitOn['case']){
+            var icon = splitOn['case'][key];
+            var newFeatureCollection = _newFeatureCollection();
+            newFeatureCollection.features = [];
+            for (var i = 0; i < featureCollection.features.length; i++) {
+                var feature = featureCollection.features[i];
+                if (feature.properties.splitOn === icon){
+                    delete feature.properties.splitOn;
+                    newFeatureCollection.features.push(feature);
+                }
             }
+            _save(
+                settings.output.replace('.geo.json', '-' + icon + '.geo.json'),
+                newFeatureCollection
+            );
         }
-        _save(
-            settings.output.replace('.geo.json', '-' + icon + '.geo.json'),
-            newFeatureCollection
-        );
     }
     _save(settings.output, featureCollection);
 };
@@ -146,6 +142,5 @@ if (settings.data){
 }
 
 var transformed = initGeoJSON(source);
-transformed = removeEntries(transformed);
-transformed = addIcons(transformed);
+transformed = addSplitOn(transformed);
 save(transformed);

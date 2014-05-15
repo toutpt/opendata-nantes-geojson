@@ -4,11 +4,11 @@
         "featureID": "properties._IDOBJ",
         "osmtags": {
             "name": "currentFeature.properties.geo.name",
-            "amenity": "'library'",
-            "addr:city": "capitalize(currentFeature.properties.COMMUNE)",
-            "addr:postcode": "currentFeature.properties.CODE_POSTAL",
+            "shop": "'alcohol'",
+            "drink:wine": "'bottled'",
             "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
-            "source:name": "Nantes Métropole, Musique et Danse en Loire-Atlantique",
+            "website": "currentFeature.properties.WEB",
+            "source:name": "'data.nantes.fr: Nantes Métropole",
             "source:ref": "getFeatureID(currentFeature)"
         },
         "osmfilter": [
