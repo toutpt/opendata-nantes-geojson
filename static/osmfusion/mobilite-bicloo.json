@@ -12,7 +12,8 @@
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",
         	"feature.properties.tags.boundary !== undefined",
-            "feature.properties.tags.type === 'boundary'"
+            "feature.properties.tags.type === 'boundary'",
+            "feature.properties.place === 'island'"
         ]
 	}
 }
