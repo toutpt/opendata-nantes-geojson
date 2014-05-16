@@ -9,7 +9,6 @@
             "operator:type": "currentFeature.properties.STATUT === 'Public' && 'public' || 'private'",
             "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
             "website": "currentFeature.properties.WEB",
-            "source:name": "'data.nantes.fr: Nantes Métropole'",
             "source:ref": "getFeatureID(currentFeature)"
         },
         "osmfilter": [

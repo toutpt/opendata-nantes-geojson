@@ -7,8 +7,7 @@
             "landuse": "'allotments'",
             "plots": "currentFeature.properties.NBRE_PARCELLES",
             "user": "currentFeature.properties.ASSOCIATION",
-            "source": "'data.nantes.fr: Nantes Métropole'",
-            "source:ref": "'currentFeature.properties._IDOBJ'"
+            "source:ref": "currentFeature.properties._IDOBJ"
         },
         "osmfilter": [
         	"feature.properties.tags.boundary !== undefined",

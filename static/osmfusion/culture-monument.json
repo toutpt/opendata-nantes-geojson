@@ -7,8 +7,7 @@
             "historic": "'monument'",
             "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
             "website": "currentFeature.properties.WEB",
-            "source:name": "'data.nantes.fr: Musique et Danse en Loire-Atlantique'",
-            "source:ref": "getFeatureID(currentFeature)"
+            "source:ref": "currentFeature.properties._IDOBJ"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",

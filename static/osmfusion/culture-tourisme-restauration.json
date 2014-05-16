@@ -7,8 +7,7 @@
             "amenity": "'restaurant'",
             "phone": "i18nPhone(currentFeature.properties.TEL_1)",
             "website": "currentFeature.properties.WEB_1",
-            "source:name": "'data.nantes.fr: Nantes Métropole",
-            "source:ref": "getFeatureID(currentFeature)"
+            "source:ref": "currentFeature.properties.ID"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",

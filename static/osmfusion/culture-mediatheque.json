@@ -7,8 +7,7 @@
             "amenity": "'library'",
             "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
             "website": "currentFeature.properties.WEB",
-            "source:name": "'data.nantes.fr: Nantes Métropole",
-            "source:ref": "getFeatureID(currentFeature)"
+            "source:ref": "currentFeature.properties._IDOBJ"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",

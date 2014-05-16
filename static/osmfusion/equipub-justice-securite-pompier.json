@@ -4,15 +4,14 @@
         "featureID": "properties._IDOBJ",
         "osmtags": {
             "name": "currentFeature.properties.geo.name",
-            "amenity": "'library'",
-            "phone": "i18nPhone(currentFeature.properties.TELEPHONE)",
-            "website": "currentFeature.properties.WEB",
+            "amenity":"'fire_station'",
+            "contact:phone": "currentFeature.properties.TELEPHONE",
             "source:ref": "currentFeature.properties._IDOBJ"
         },
         "osmfilter": [
-        	"feature.properties.tags.landuse !== undefined",
         	"feature.properties.tags.boundary !== undefined",
-            "feature.properties.tags.type === 'boundary'"
+            "feature.properties.tags.type === 'boundary'",
+            "feature.properties.place === 'island'"
         ]
 	}
 }

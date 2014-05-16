@@ -7,8 +7,7 @@
             "amenity":"'place_of_worship'",
             "religion":"'jewish'",
             "phone":"i18nPhone(currentFeature.properties.TELEPHONE)",
-            "source": "'data.nantes.fr: Nantes Métropole'",
-            "source:ref": "'currentFeature.properties._IDOBJ'"
+            "source:ref": "currentFeature.properties._IDOBJ"
         },
         "osmfilter": [
         	"feature.properties.tags.landuse !== undefined",
