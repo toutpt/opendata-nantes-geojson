@@ -2,5 +2,19 @@
 	"source": "../downloads/opendata/equipub-publics.json",
 	"data": "data",
 	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"splitOn": {
+		"switch": ["properties.LIBCATEGORIE"],
+		"case" : {
+			"nantes métropole": "nantesmetropole",
+			"conseil régional": "conseil-regional",
+			"services de l'etat": "services",
+			"organisme public": "organisme-public",
+			"conseil général": "conseil-general",
+			"mairie": "mairie",
+			"emploi": "emploi",
+			"social": "social",
+			"consulat et ambassade": "consulat-ambassade"
+		}
+	},
 	"output": "static/geojson/equipub-publics.geo.json"
 }
