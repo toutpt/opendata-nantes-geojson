@@ -75,13 +75,13 @@ var addSplitOn = function(featureCollection){
         if (splitOn){
             var switchKey = _traverse(entry, splitOn['switch']);
             if (!switchKey){
-                //console.log('icon : default');
+//                console.log('switchOn : default');
                 entry.properties.splitOn = splitOn.default;
             }else{
-                //console.log('icon : find on switch');
+                console.log('switchOn : find on switch');
                 switchKey = switchKey.toLowerCase();
                 for(var key in splitOn['case']){
-                    //key === 'bicloo'                    
+                    //key === 'bicloo'
                     if (key === switchKey){
                     //console.log('icon : found ' + key);
                         entry.properties.splitOn = splitOn['case'][key];
