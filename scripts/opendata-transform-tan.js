@@ -243,7 +243,7 @@ var tanStopsByLines = function(){
 								]}
 							});
 						}
-						fname = 'static/geojson/mobilite-tanstops-'+ i + '.geo.json';
+						fname = 'static/geojson/mobilite-tanstops-'+ route.route_short_name + '.geo.json';
 						fs.writeFile(fname, JSON.stringify(GEOJSON));
 						console.log('save as '+fname);
 					}
