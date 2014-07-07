@@ -176,7 +176,10 @@ var tanStopsByLines = function(){
 		ROUTES_LIST.push(route.route_id);
 	};
 	var transformTrip = function(trip){
-		TRIPS[trip.route_id] = trip;
+		if (TRIPS[trip.route_id] === undefined){
+			TRIPS[trip.route_id] = [];
+		}
+		TRIPS[trip.route_id].push(trip);
 	};
 	var transformStops = function(stop){
 		STOPS[stop.stop_id] = stop;
@@ -208,7 +211,7 @@ var tanStopsByLines = function(){
 				.to.array(function(stopTimes){
 					stopTimes.map(transformStopTimes);
 
-					var GEOJSON, route, routeId, tripId, _stopTimes,stop, i, j, fname;
+					var GEOJSON, route, routeId, tripId, _stopTimes,stop, stops, i, j, fname;
 					//get the stop
 					//get the trip -> route
 					for (i = 0; i < ROUTES_LIST.length; i++) {
@@ -222,15 +225,18 @@ var tanStopsByLines = function(){
 							},
 							features: []
 						};
-						if (TRIPS[routeId] === undefined){
-							console.log('can t find trips for '+i);
-							continue;
-						}
-						tripId = TRIPS[routeId].trip_id;
-						_stopTimes = STOP_TIMES[tripId];
+						trips = TRIPS[routeId];
+						stops = {};
+						for (var k = 0; k < trips.length; k++) {
+							tripId = trips[k].trip_id;
+							_stopTimes = STOP_TIMES[tripId];
 
-						for (j = 0; j < _stopTimes.length; j++) {
-							stop = STOPS[_stopTimes[j].stop_id];
+							for (j = 0; j < _stopTimes.length; j++) {
+								stops[_stopTimes[j].stop_id] = STOPS[_stopTimes[j].stop_id];
+							}
+						}
+						for (var j = 0; j < stops.length; j++) {
+							stop = stops[j];
 							GEOJSON.features.push({
 								type:"Feature",
 								properties:{
@@ -246,6 +252,7 @@ var tanStopsByLines = function(){
 						fname = 'static/geojson/mobilite-tanstops-'+ route.route_short_name + '.geo.json';
 						fs.writeFile(fname, JSON.stringify(GEOJSON));
 						console.log('save as '+fname);
+
 					}
 				});
 			});

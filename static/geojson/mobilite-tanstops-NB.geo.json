@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","properties":{"name":"NB"},"features":[{"type":"Feature","properties":{"id":"StopPoint:HALA3","name":"Haluchère-Batignolles","index":"1"},"geometry":{"type":"Point","coordinates":["-1.52262985","47.24926968"]}},{"type":"Feature","properties":{"id":"StopPoint:HAVE3","name":"Halvêque","index":"2"},"geometry":{"type":"Point","coordinates":["-1.51879865","47.25942191"]}}]}
+{"type":"FeatureCollection","properties":{"name":"NB"},"features":[]}
