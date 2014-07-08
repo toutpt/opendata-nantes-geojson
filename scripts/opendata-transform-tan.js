@@ -235,7 +235,8 @@ var tanStopsByLines = function(){
 								stops[_stopTimes[j].stop_id] = STOPS[_stopTimes[j].stop_id];
 							}
 						}
-						for (var stop in stops) {
+						for (var property in stops) {
+							stop = stops[property];
 							GEOJSON.features.push({
 								type:"Feature",
 								properties:{
