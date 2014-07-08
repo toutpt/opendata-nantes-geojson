@@ -235,14 +235,12 @@ var tanStopsByLines = function(){
 								stops[_stopTimes[j].stop_id] = STOPS[_stopTimes[j].stop_id];
 							}
 						}
-						for (var j = 0; j < stops.length; j++) {
-							stop = stops[j];
+						for (var stop in stops) {
 							GEOJSON.features.push({
 								type:"Feature",
 								properties:{
 									id: stop.stop_id,
-									name: stop.stop_name,
-									index: _stopTimes[j].stop_sequence
+									name: stop.stop_name
 								},
 								geometry:{type:"Point",coordinates:[
 									stop.stop_lon,stop.stop_lat
@@ -252,7 +250,6 @@ var tanStopsByLines = function(){
 						fname = 'static/geojson/mobilite-tanstops-'+ route.route_short_name + '.geo.json';
 						fs.writeFile(fname, JSON.stringify(GEOJSON));
 						console.log('save as '+fname);
-
 					}
 				});
 			});
