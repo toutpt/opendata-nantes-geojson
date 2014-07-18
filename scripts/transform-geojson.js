@@ -78,7 +78,6 @@ var addSplitOn = function(featureCollection){
 //                console.log('switchOn : default');
                 entry.properties.splitOn = splitOn.default;
             }else{
-                console.log('switchOn : find on switch');
                 switchKey = switchKey.toLowerCase();
                 for(var key in splitOn['case']){
                     //key === 'bicloo'

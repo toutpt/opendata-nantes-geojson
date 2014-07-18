@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","features":[]}
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"geo":{"name":"Salle La Bouche d'Air"},"_l":[47.2109876432402,-1.56240748866587],"LIBTHEME":"CULTURE","CODE_POSTAL":44000,"WEB":null,"STATUT":null,"TELEPHONE":"02 40 73 40 20","THEME":1,"COMMUNE":"NANTES","LIBCATEGORIE":null,"ADRESSE":"24 Quai de la Fosse","LIBTYPE":null,"_IDOBJ":3157,"TYPE":null,"CATEGORIE":null},"geometry":{"type":"Point","coordinates":[-1.56240748866587,47.2109876432402]}}]}
