@@ -19,6 +19,7 @@ default:
 	node scripts/transform-geojson.js scripts/opendata-transform-equipub-sportsloisirs.json
 	node scripts/transform-geojson.js scripts/opendata-transform-equipub-viepratique.json
 	node scripts/transform-geojson.js scripts/opendata-transform-equipub-viesociale.json
+	node scripts/transform-geojson.js scripts/opendata-transform-equipub-viesociale-jeunesse.json
 	node scripts/opendata-transform-tan.js
 
 clean:

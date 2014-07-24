@@ -1,0 +1,14 @@
+{
+	"source": "../static/geojson/equipub-viesociale-jeunesse.geo.json",
+	"data": "features",
+	"geometry": {"lat" : "geometry.coordinates[1]", "lng": "geometry.coordinates[0]"},
+	"splitOn": {
+		"switch": "properties.LIBTYPE",
+		"case" : {
+			"centre de loisirs": "centre-de-loisirs",
+			"foyer": "foyer"
+		},
+		"default": "default"
+	},
+	"output": "static/geojson/equipub-viesociale-jeunesse.geo.json"
+}
