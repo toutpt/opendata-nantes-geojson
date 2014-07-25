@@ -71,7 +71,7 @@ var initGeoJSON = function(values){
 var addSplitOn = function(featureCollection){
     var newValues = [];
     var splitOn = settings.splitOn;
-    var addIcon = function(entry){
+    var addSplitOnProperty = function(entry){
         if (splitOn){
             var switchKey = _traverse(entry, splitOn['switch']);
             if (!switchKey){
@@ -95,7 +95,7 @@ var addSplitOn = function(featureCollection){
     };
     for (var i = 0; i < featureCollection.features.length; i++) {
         var entry = featureCollection.features[i];
-        addIcon(entry);
+        addSplitOnProperty(entry);
         newValues.push(entry);
     }
     featureCollection.properties = newValues;
@@ -107,7 +107,7 @@ var save = function(featureCollection){
     //console.log('save ' + featureCollection);
     var _handleError = function(err){
         if(err) {
-            //console.log(err);
+            console.error(err);
         }
     };
     var _save = function(filename, data){
@@ -116,20 +116,23 @@ var save = function(featureCollection){
     };
     var splitOn = settings.splitOn;
     if (splitOn){
-        for(var key in splitOn['case']){
-            var icon = splitOn['case'][key];
-            var newFeatureCollection = _newFeatureCollection();
-            newFeatureCollection.features = [];
-            for (var i = 0; i < featureCollection.features.length; i++) {
-                var feature = featureCollection.features[i];
-                if (feature.properties.splitOn === icon){
-                    delete feature.properties.splitOn;
-                    newFeatureCollection.features.push(feature);
+        var splitedFeatures = {};
+        var splitedOn, feature;
+        for (var i = 0; i < featureCollection.features.length; i++) {
+            feature = featureCollection.features[i];
+            splitedOn = feature.properties.splitOn;
+            if (splitedOn){
+                if (splitedFeatures[splitedOn] === undefined){
+                    splitedFeatures[splitedOn] = _newFeatureCollection();
                 }
+                delete feature.properties.splitOn;
+                splitedFeatures[splitedOn].features.push(feature);
             }
+        }
+        for (var property in splitedFeatures) {
             _save(
-                settings.output.replace('.geo.json', '-' + icon + '.geo.json'),
-                newFeatureCollection
+                settings.output.replace('.geo.json', '-' + property + '.geo.json'),
+                splitedFeatures[property]
             );
         }
     }
