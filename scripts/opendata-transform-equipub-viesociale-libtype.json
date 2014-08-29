@@ -17,9 +17,10 @@
 			"résidence universitaire": "structureuniversitaire",
 			"restaurant universitaire": "structureuniversitaire",
 			"bibliothèque universitaire": "structureuniversitaire",
-			"divers": "structureuniversitaire"
+			"divers": "structureuniversitaire",
+			"centre de loisirs": "centredeloisirs"
 		},
 		"default": "default"
 	},
-	"output": "static/geojson/equipub.geo.json"
+	"output": "static/geojson/equipub-viesociale.geo.json"
 }
