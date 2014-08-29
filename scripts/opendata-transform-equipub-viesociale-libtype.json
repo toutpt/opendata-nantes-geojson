@@ -1,0 +1,25 @@
+{
+	"source": "../downloads/opendata/equipub-viesociale.json",
+	"data": "data",
+	"geometry": {"lat" : "_l[1]", "lng": "_l[0]"},
+	"splitOn": {
+		"switch": "properties.LIBTYPE",
+		"case" : {
+			"maison de retraite": "personneagee",
+			"résidence service": "personneagee",
+			"unité de soins": "personneagee",
+			"centre socioculturel": "vieassociative",
+			"maison de quartier": "vieassociative",
+			"locaux jeunes": "vieassociative",
+			"maison d'associations": "vieassociative",
+			"pôle associatif": "vieassociative",
+			"salle associative": "vieassociative",
+			"résidence universitaire": "structureuniversitaire",
+			"restaurant universitaire": "structureuniversitaire",
+			"bibliothèque universitaire": "structureuniversitaire",
+			"divers": "structureuniversitaire"
+		},
+		"default": "default"
+	},
+	"output": "static/geojson/equipub.geo.json"
+}
