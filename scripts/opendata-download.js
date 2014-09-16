@@ -67,17 +67,15 @@ var files = [
 
 var download = function(url, dest) {
     var target = path.join(__dirname, '..', 'downloads', 'opendata', dest);
-    if (!fs.existsSync(target)){
-        var file = fs.createWriteStream(target);
-        http.get(url, function(response) {
-            response.pipe(file);
-            file.on('finish', function() {
-                file.close();
-            });
+    var file = fs.createWriteStream(target);
+    http.get(url, function(response) {
+        response.pipe(file);
+        file.on('finish', function() {
+            console.log('download complete ' + target + ' < ' + url);
+            file.close();
         });
-    }
+    });
 };
 for (var i = 0; i < files.length; i++) {
-    var request = download(files[i].url, files[i].file);
+    download(files[i].url, files[i].file);
 }
-
